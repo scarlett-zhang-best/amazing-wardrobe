@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ff6f91">
+  <title>Dressy — Character Studio</title>
+  <link rel="stylesheet" href="styles.css?v=18">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-group">
+      <a class="brand" href="#" aria-label="Dressy home"><span class="brand-mark">D</span><span>dressy</span></a>
+      <a class="artist-credit top-credit" href="https://maellemarylloup.itch.io/" target="_blank" rel="noopener noreferrer">Assets by Maelle Marylloup ↗</a>
+    </div>
+    <div class="top-actions">
+      <button class="icon-btn" id="undoBtn" title="Undo" aria-label="Undo">↶</button>
+      <button class="icon-btn" id="redoBtn" title="Redo" aria-label="Redo">↷</button>
+      <button class="random-btn" id="randomizeBtn"><span>✦</span> Randomize</button>
+      <a class="download-btn preparing" id="downloadBtn" href="#" role="button" aria-disabled="true"><span>↓</span> Save look</a>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <aside class="tool-rail" aria-label="Design tools">
+      <button class="rail-btn" data-panel="hair"><span>✦</span><small>Hair</small></button>
+      <button class="rail-btn active" data-panel="clothes"><span>♧</span><small>Wardrobe</small></button>
+      <button class="rail-btn" data-panel="body"><span>◒</span><small>Body</small></button>
+      <button class="rail-btn" data-panel="backgrounds"><span>▧</span><small>Backgrounds</small></button>
+      <button class="rail-btn" data-panel="stickers"><span>♡</span><small>Stickers</small></button>
+      <button class="rail-btn" data-panel="draw"><span>✎</span><small>Draw</small></button>
+    </aside>
+
+    <section class="control-panel" aria-live="polite">
+      <div class="panel-heading">
+        <div><p class="eyebrow">MAKE IT YOURS</p><h1 id="panelTitle">Character wardrobe</h1></div>
+        <button class="collapse-btn" id="collapseBtn" aria-label="Collapse panel">‹</button>
+      </div>
+      <div id="panelContent"></div>
+    </section>
+
+    <section class="studio">
+      <button class="reopen-panel" id="reopenPanel" aria-label="Open customization panel">Customize <span>›</span></button>
+      <div class="stage-wrap">
+        <div class="stage-head">
+          <div><span class="status-dot"></span> Your canvas</div>
+          <span class="hint">Drag stickers · Draw anywhere</span>
+        </div>
+        <div class="canvas-frame" id="canvasFrame">
+          <canvas id="artCanvas" width="720" height="840" aria-label="Dress up canvas"></canvas>
+          <div class="zoom-controls">
+            <button id="zoomOut" aria-label="Zoom out">−</button><span id="zoomLabel">100%</span><button id="zoomIn" aria-label="Zoom in">+</button>
+          </div>
+        </div>
+        <div class="quick-strip">
+          <span>Quick add</span>
+          <button data-quick="✨">✨</button><button data-quick="💖">💖</button><button data-quick="🌸">🌸</button><button data-quick="⭐">⭐</button><button data-quick="🎀">🎀</button>
+        </div>
+        <footer class="bottom-credit">Character assets by <a href="https://maellemarylloup.itch.io/" target="_blank" rel="noopener noreferrer">Maelle Marylloup on itch.io ↗</a></footer>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="config/defaults.js?v=18"></script>
+  <script src="app.js?v=18"></script>
+</body>
+</html>
